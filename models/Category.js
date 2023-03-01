@@ -9,8 +9,8 @@ Category.init(
     // define columns
     id: {
       type: DataTypes.INTEGER,
-      autoincrement: true,
-      primarykey: true,
+      autoIncrement: true,
+      primaryKey: true,
       allowNull: false
 
     },
