@@ -35,15 +35,10 @@ router.post('/', async (req, res) => {
     const newCategory = await Category.create({
     category_name: req.body.category_name
   });
-  if(!category_name) {
-    res.status(404).json({ message: 'No category name entered!'});
-    return;
-  }
-  res.status(200).json(newCategory)
+  res.status(200).json(newCategory);
   } catch (err) {
     res.status(500).json(err);
   }
-
 });
 
 router.put('/:id', async (req, res) => {
@@ -58,7 +53,7 @@ router.put('/:id', async (req, res) => {
       }
     }
   );
-  return res.json(category);
+  res.status(200).json(category);
 });
 
 router.delete('/:id', async (req, res) => {
@@ -68,8 +63,7 @@ router.delete('/:id', async (req, res) => {
       id: req.params.id,
     },
   });
-
-  return res.json(category);
+  res.status(200).json(category);
 });
 
 module.exports = router;
